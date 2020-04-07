@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     //Speed
     [Range(1, 10)]
     public float speed = 8f;
+    public float sprintSpeed = 16f;
 
     //able to set player sprite in editor
     public GameObject player;
@@ -31,10 +32,18 @@ public class PlayerController : MonoBehaviour
         //tells us if we hit our movement keys or not (horizontal being AD or left right arrows and vertical being WS or up down arrows)
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
+        bool moveSprint = Input.GetKey("left shift");
 
         //Actually moves the player (multiply speed by time in order to get acceleration)
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
         transform.Translate(movement * speed * Time.deltaTime);
+
+        //Sprint
+        if (moveSprint == true)
+        {
+            Vector2 sprint = new Vector2(moveHorizontal, moveVertical);
+            transform.Translate(sprint * sprintSpeed * Time.deltaTime);
+        }
 
         //sets our player position to be our stabilizer position
         player.transform.position = transform.position;
