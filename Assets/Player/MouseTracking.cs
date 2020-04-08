@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class MouseTracking : MonoBehaviour
 {
+
+    public Vector3 mousePosition;
+
+    public Vector3 mouseDirection;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,16 +24,17 @@ public class MouseTracking : MonoBehaviour
     void faceMouse()
     {
         //sets our mouse position relative to its position in the game world
-        Vector2 mouse_pos = Input.mousePosition;
-        mouse_pos = Camera.main.ScreenToWorldPoint(mouse_pos);
+        mousePosition = Input.mousePosition;
+        mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
         //Calculates the direction our character should be facing
-        Vector2 direction = new Vector2(
-            mouse_pos.x - transform.position.x,
-            mouse_pos.y - transform.position.y
-            );
+        mouseDirection = new Vector3(
+            mousePosition.x - transform.position.x,
+            mousePosition.y - transform.position.y,
+            0
+            ); 
         
         //sets the top of our character to always face the direction of our mouse
-        transform.up = direction;
+        transform.up = mouseDirection;
     }
 }
