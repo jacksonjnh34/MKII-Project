@@ -39,20 +39,18 @@ public class CompleteCameraController : MonoBehaviour
 
         mouseOffset = mouseOffset / 2;
 
-        offset = transform.position - player.transform.position;
+        //offset = transform.position - player.transform.position;
     }
 
     // LateUpdate is called after Update each frame
     void LateUpdate()
     {
 
-        calculatedTransform = offset + mouseOffset;
-
-        calculatedTransform = player.transform.position + calculatedTransform;
+        calculatedTransform = player.transform.position + offset + mouseOffset;
 
         calculatedTransform.x = Mathf.Clamp(calculatedTransform.x, player.transform.position.x - xClamp, player.transform.position.x + xClamp);
         calculatedTransform.y = Mathf.Clamp(calculatedTransform.y, player.transform.position.y - yClamp, player.transform.position.y + yClamp);
-        calculatedTransform.z = -10;
+        calculatedTransform.z = -20;
 
 
         // Set the position of the camera's transform to be the same as the player's, but offset by the calculated offset distance.
