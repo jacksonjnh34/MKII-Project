@@ -8,27 +8,24 @@ public class Projectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(gameObject, 1.0f);
+    	//Deletes projectile after 5 seconds
+        Destroy(gameObject, 5.0f);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
-    void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
+    	Debug.Log("OnCollisionEnter2D");
     	if(collision.gameObject.tag.Equals("Edge"))
-    	{
-    		//Damage code here?
-    	}
-    	else
     	{
     		Destroy(gameObject);
     	}
+    	else
+    	{
+    		//Damage code here?
+    	}
 
-    	Destroy(gameObject);
+    	
     	
     }
 }

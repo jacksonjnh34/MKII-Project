@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour
 {
-    public Rigidbody projectile;
+    public Rigidbody2D projectile;
     [Range(1, 1000)]
     public float projectileSpeed = 10f;
 
@@ -53,7 +53,7 @@ public class PlayerShoot : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && isReloading == false)
         {
             currentAmmo--;
-            Rigidbody clone;
+            Rigidbody2D clone;
             clone = Instantiate(projectile, transform.position, transform.rotation);
 
             clone.AddForce(transform.up * projectileSpeed);
@@ -61,5 +61,10 @@ public class PlayerShoot : MonoBehaviour
             //This is just a check delete when done
             print(currentAmmo);
         }
+    }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        Debug.Log("Player hit wall");
     }
 }
