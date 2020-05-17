@@ -62,9 +62,4 @@ public class PlayerShoot : MonoBehaviour
             print(currentAmmo);
         }
     }
-
-    void OnCollisionEnter2D(Collision2D col)
-    {
-        Debug.Log("Player hit wall");
-    }
 }

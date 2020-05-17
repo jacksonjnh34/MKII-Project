@@ -15,7 +15,7 @@ public class Projectile : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-    	Debug.Log("OnCollisionEnter2D");
+    	//Debug.Log("OnCollisionEnter2D");
     	if(collision.gameObject.tag.Equals("Edge"))
     	{
     		Destroy(gameObject);

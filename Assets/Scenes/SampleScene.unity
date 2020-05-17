@@ -606,6 +606,7 @@ GameObject:
   - component: {fileID: 1430834083}
   - component: {fileID: 1430834084}
   - component: {fileID: 1430834085}
+  - component: {fileID: 1430834086}
   m_Layer: 0
   m_Name: Temp Player
   m_TagString: Player
@@ -755,6 +756,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.8165487, y: 1.0960646}
   m_EdgeRadius: 0
+--- !u!114 &1430834086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430834079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 674bddfb94ffe2a498877c6d10584513, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sendTriggerMessage: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  skinWidth: 0.1
 --- !u!1 &1691989451
 GameObject:
   m_ObjectHideFlags: 0
@@ -927,16 +945,6 @@ CompositeCollider2D:
   m_GenerationType: 0
   m_EdgeRadius: 0
   m_ColliderPaths:
-  - m_Collider: {fileID: 1691989457}
-    m_ColliderPaths:
-    - - X: -102723509
-        Y: -54195412
-      - X: -102723509
-        Y: 55804604
-      - X: -113275680
-        Y: 55804311
-      - X: -113275387
-        Y: -54195412
   - m_Collider: {fileID: 1691989458}
     m_ColliderPaths:
     - - X: 113275275
@@ -967,6 +975,16 @@ CompositeCollider2D:
         Y: 55804311
       - X: -113275387
         Y: 45173872
+  - m_Collider: {fileID: 1691989457}
+    m_ColliderPaths:
+    - - X: -102723509
+        Y: -54195412
+      - X: -102723509
+        Y: 55804604
+      - X: -113275680
+        Y: 55804311
+      - X: -113275387
+        Y: -54195412
   m_CompositePaths:
     m_Paths:
     - - {x: 11.32755, y: -5.4195414}

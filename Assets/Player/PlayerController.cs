@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        MouseTracking mouseTracking = player.GetComponent<MouseTracking>();
+    	MouseTracking mouseTracking = player.GetComponent<MouseTracking>();
         mouseDir = mouseTracking.mouseDirection;
         movement();
 
